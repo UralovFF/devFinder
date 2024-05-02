@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
 
+  font-family: inherit;
   box-sizing: border-box;
   transition: all 0.3s;
 }
@@ -13,17 +14,28 @@ a {
   color: inherit;
 }
 
+img{
+  display: block;
+}
+
+button{
+  cursor: pointer;
+  border: none;
+}
+
 .conteiner {
-  max-width: 730px;
+  max-width: 754px;
   height: 100%;
 
   margin: 0 auto;
+  padding: 0 12px;
 }
 
 html,
 body {
-  width: 100%;
   height: 100%;
+  
+  font-family: 'Space Mono', sans-serif;
 
   display: flex;
   flex-direction: column;
@@ -40,34 +52,23 @@ body {
 
 .logo {
   color: #222731;
-  font-family: Space Mono;
   font-size: 26px;
-  font-weight: 700;
+  font-weight: 700
 }
 
-.mode {
+.dark__mode {
   cursor: pointer;
   display: flex;
   align-items: center;
   column-gap: 16px;
 }
 
-.mode p,
-svg g path {
-  transition: all 200ms;
-}
-
 .mode__text {
   color: #697c9a;
-  font-family: Space Mono;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 2.5px;
   text-transform: uppercase;
-}
-
-.mode:hover .mode__text {
-  color: #222731;
 }
 
 .search {
@@ -79,53 +80,43 @@ svg g path {
   background: #fefefe;
   box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
 
-  padding: 10px 10px 10px 32px;
+  padding: 0px 10px 0px 32px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.search__body__dark {
-  background: #1e2a47;
-  box-shadow: none;
-}
-
 .search__input {
-  width: 100%;
   display: flex;
   align-items: center;
   column-gap: 24px;
 }
 
 .search__input input {
-  width: 100%;
-  color: #4b6a9b;
-  font-family: Space Mono;
+  height: 70px;
+
+  color: inherit;
   font-size: 18px;
-  font-weight: 400;
   line-height: 25px;
 
   outline: none;
-
   border: none;
 }
 
-.search__input__dark {
-  background: #1e2a47;
-}
-
 .search__btn {
-  display: block;
+  border: none;
   border-radius: 10px;
   background: #0079ff;
 
   padding: 12px 24px;
 
   color: #fff;
-  font-family: Space Mono;
-  font-size: 16px;
   font-weight: 700;
+}
+
+.search__btn:hover{
+  background: #60abff;
 }
 
 .main-form {
@@ -143,18 +134,9 @@ svg g path {
   box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
 }
 
-.main-form__dark {
-  background: #1e2a47;
-  box-shadow: none;
-}
-
 .main-form__body__img {
   width: max-content;
   grid-column: 1/2;
-}
-
-.main-form__body__img img {
-  display: block;
 }
 
 .main-form__head {
@@ -174,16 +156,12 @@ svg g path {
 
 .nick {
   color: #2b3442;
-  font-family: Space Mono;
   font-size: 26px;
   font-weight: 700;
 }
 
 .nickName a {
   color: #0079ff;
-  font-family: Space Mono;
-  font-size: 16px;
-  font-weight: 400;
 }
 
 .date {
@@ -191,15 +169,12 @@ svg g path {
   grid-column: 3/4;
   grid-row: 1/2;
   color: #697c9a;
-  font-family: Space Mono;
   font-size: 15px;
 }
 
 .profile_status {
   color: #4b6a9b;
-  font-family: Space Mono;
   font-size: 15px;
-  font-weight: 400;
   line-height: 25px;
   opacity: 0.75;
 
@@ -208,7 +183,7 @@ svg g path {
   grid-row: 1/2;
 }
 
-.account_status {
+.account__status {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -224,14 +199,11 @@ svg g path {
 
 .account__status__card__title {
   color: #4b6a9b;
-  font-family: Space Mono;
-  font-size: 13px;
-  font-weight: 400;
+  font-size: 16px;
 }
 
 .account__status__card__text {
   color: #2b3442;
-  font-family: Space Mono;
   font-size: 22px;
   font-weight: 700;
 }
@@ -254,7 +226,6 @@ svg g path {
   column-gap: 18px;
 
   color: #4b6a9b;
-  font-family: Space Mono;
   font-size: 15px;
 }
 
@@ -264,294 +235,164 @@ svg g path {
 
 .main-form__navs a:hover {
   text-decoration: underline;
-  text-decoration-color: #0079ff;
+  text-decoration-color: inherit;
 }
 
-.light__text{
+.light__text {
   color: #fff;
 }
 
-.dark__bg {
+.dark__bg__first {
   background: #141d2f;
+  color: #fff;
 }
 
-.light__svg{
-  fill:#fff;
+.dark__bg__second {
+  background: #1e2a47;
+  box-shadow: none;
+  color: #fff;
 }
 
-.hovered__mode{
-  fill: #fff
+.light__svg {
+  fill: #fff;
 }
 
-@media (min-width: 581px) and (max-width: 768px) {
-  header,
-  .part2,
-  .part3 {
-    padding: 0px 20px;
+@media (max-width: 768px){
+  .conteiner{
+    max-width: 574px;
   }
-  .part3_body {
+  
+  .main-form__body {
     display: grid;
     grid-template-columns: auto;
-
+  
     padding: 40px;
   }
-  .part3_body_img {
-    grid-column: 1/2;
-    grid-row: 1/2;
-  }
-  .part3_body_img img {
-    display: block;
-  }
-  .part3_body .head {
+  
+  .main-form__head {
     display: grid;
-    grid-template-columns: auto auto;
-    column-gap: 40px;
-
+    grid-template-columns: max-content auto;
     grid-column: 1/2;
-    grid-row: 1/2;
-
-    justify-self: flex-start;
+    column-gap: 41px;
   }
-  .head .date {
-    justify-self: start;
+  
+  .main-form__head .nickName {
+    margin-top: 13px;
+  
+    grid-column: 2/3;
+  }
+  
+  .date {
+    margin-bottom: 13px;
+    justify-self: flex-start;
     align-self: flex-end;
     grid-column: 2/3;
     grid-row: 1/2;
   }
-  .part3_body .profile_status {
+  
+  .profile_status {
     margin-top: 24px;
     grid-column: 1/2;
     grid-row: 2/3;
   }
-  .part3_body .account_status {
-    width: 100%;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
+  
+  .account__status {
     grid-column: 1/2;
-
-    margin-top: 32px;
-    padding: 15px 80px 15px 32px;
-
-    border-radius: 10px;
-    background: #f6f8ff;
   }
-  .part3_body_navs {
-    width: 100%;
-
+  
+  .account__status__card__title {
+    font-size: 13px;
+  }
+  
+  .account__status__card__text {
+    font-size: 22px;
+  }
+  
+  .main-form__navs {
     margin-top: 30px;
-    padding-right: 64px;
-
     grid-column: 1/2;
-
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto auto;
   }
 }
-@media (min-width: 376px) and (max-width: 580px) {
-  header,
-  .part2,
-  .part3 {
-    padding: 0px 20px;
-  }
-  .part2_body {
-    width: 100%;
 
-    border-radius: 15px;
-    background: #fefefe;
-    box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
+@media (max-width: 500px){
+    .conteiner{
+      max-width: 574px;
+      padding: 0 24px;
+    }
+    
+    .search__body {
+      padding: 0px 7px 0px 16px;
+    }
+    
+    .search__input {
+      column-gap: 9px;
+    }
 
-    padding: 10px;
+    .search__input img{
+      width: 20px;
+    }
+    
+    .search__input input {
+      height: 60px;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .input {
-    display: flex;
-    align-items: center;
-    column-gap: 10px;
-  }
-  .input input {
-    font-size: 15px;
-  }
-  .part2_body .btn {
-    display: block;
-    border-radius: 10px;
-    background: #0079ff;
+      font-size: 13px;
+    }
+    
+    .search__btn {
+      padding: 12px 16px;
+      font-size: 14px;
+    }
 
-    padding: 6px 12px;
+    .main-form__body{
+      padding: 24px;
+    }
 
-    color: #fff;
-    font-family: Space Mono;
-    font-size: 16px;
-    font-weight: 700;
-  }
-  .part3_body {
-    display: grid;
-    grid-template-columns: auto;
+    .main-form__body__img img{
+      width: 70px;
+    }
+    
+    .main-form__head {
+      column-gap: 20px;
+    }
+    
+    .main-form__head .nickName {
+      margin-top: 0px;
+    }
 
-    padding: 24px;
-  }
-  .part3_body_img {
-    width: 80%;
+    .nickName a {
+      font-size: 13px;
+    }
 
-    grid-column: 1/2;
-    grid-row: 1/2;
-  }
-  .part3_body_img img {
-    width: 100%;
-    display: block;
-  }
-  .part3_body .head {
-    display: grid;
-    grid-template-columns: auto auto;
-    column-gap: 0px;
+    .nick{
+      font-size: 16px;
+    }
+    
+    .date {
+      margin-bottom: 0px;
+      font-size: 13px;
+    }
+    
+    .profile_status {
+      font-size: 13px;
+      margin-top: 32px;
+    }
 
-    grid-column: 1/2;
-    grid-row: 1/2;
-
-    justify-self: flex-start;
-  }
-  .head .date {
-    justify-self: start;
-    align-self: flex-end;
-    grid-column: 2/3;
-    grid-row: 1/2;
-  }
-  .part3_body .profile_status {
-    margin-top: 24px;
-    grid-column: 1/2;
-    grid-row: 2/3;
-  }
-  .part3_body .account_status {
-    width: 100%;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    grid-column: 1/2;
-
-    margin-top: 24px;
-    padding: 15px;
-
-    border-radius: 10px;
-    background: #f6f8ff;
-  }
-  .part3_body_navs {
-    width: 100%;
-
-    margin-top: 24px;
-
-    grid-column: 1/2;
-
-    display: grid;
-    grid-template-columns: auto;
-  }
-}
-@media (min-width: 200px) and (max-width: 375px) {
-  header,
-  .part2,
-  .part3 {
-    padding: 0px 20px;
-  }
-  .part2_body {
-    width: 100%;
-
-    border-radius: 15px;
-    background: #fefefe;
-    box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
-
-    padding: 10px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .input {
-    display: flex;
-    align-items: center;
-    column-gap: 10px;
-  }
-  .input input {
-    font-size: 15px;
-  }
-  .part2_body .btn {
-    display: block;
-    border-radius: 10px;
-    background: #0079ff;
-
-    padding: 6px 12px;
-
-    color: #fff;
-    font-family: Space Mono;
-    font-size: 16px;
-    font-weight: 700;
-  }
-  .part3_body {
-    display: grid;
-    grid-template-columns: auto;
-
-    padding: 24px;
-  }
-  .part3_body_img {
-    width: 80%;
-
-    grid-column: 1/2;
-    grid-row: 1/2;
-  }
-  .part3_body_img img {
-    width: 100%;
-    display: block;
-  }
-  .part3_body .head {
-    display: grid;
-    grid-template-columns: auto auto;
-    column-gap: 0px;
-
-    grid-column: 1/2;
-    grid-row: 1/2;
-
-    justify-self: flex-start;
-  }
-  .head .date {
-    justify-self: start;
-    align-self: flex-end;
-    grid-column: 2/3;
-    grid-row: 1/2;
-  }
-  .part3_body .profile_status {
-    margin-top: 24px;
-    grid-column: 1/2;
-    grid-row: 2/3;
-  }
-  .part3_body .account_status {
-    width: 100%;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    grid-column: 1/2;
-
-    margin-top: 24px;
-    padding: 15px;
-
-    border-radius: 10px;
-    background: #f6f8ff;
-  }
-  .part3_body_navs {
-    width: 100%;
-
-    margin-top: 24px;
-
-    grid-column: 1/2;
-
-    display: grid;
-    grid-template-columns: auto;
-  }
+    .account__status{
+      margin-top: 24px;
+      padding: 18px 15px;
+    }
+    
+    .account__status__card__title {
+      font-size: 12px;
+    }
+    
+    .account__status__card__text {
+      font-size: 16px;
+    }
+    
+    .main-form__navs {
+      margin-top: 24px;
+      grid-template-columns: auto;
+      row-gap: 16px;
+    }
 }
